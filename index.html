@@ -17,7 +17,7 @@
 </head>
 
 <body onload="init()">
-    <div id="app" class="container">
+    <div id="app" class="container h-100">
 
 
 
@@ -37,11 +37,11 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1">Player 1</span>
                             </div>
-                            <input type="text" class="form-control" placeholder="Name" aria-label="Username"
+                            <input id = "playerOneName" type="text" class="form-control" placeholder="Name" aria-label="Username"
                                 aria-describedby="basic-addon1">
                         </div>
-                        <div class="btn-group btn-group-toggle mb-3 d-flex justify-content-center"
-                            data-toggle="buttons" id="playerOneSymbolSelection">
+                        <!-- <div id="playerOneSymbolPick" class="btn-group btn-group-toggle mb-3 d-flex justify-content-center"
+                            data-toggle="buttons" >
                             <label class="btn btn-secondary active">
                                 <input type="radio" name="options" id="option1" autocomplete="off" checked> ❌
                             </label>
@@ -51,16 +51,16 @@
                             <label class="btn btn-secondary">
                                 <input type="radio" name="options" id="option3" autocomplete="off"> 🏎
                             </label>
-                        </div>
+                        </div> -->
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1">Player 2</span>
                             </div>
-                            <input type="text" class="form-control" placeholder="Name" aria-label="Username"
+                            <input id="playerTwoName" type="text" class="form-control" placeholder="Name" aria-label="Username"
                                 aria-describedby="basic-addon1">
                         </div>
-                        <div class="btn-group btn-group-toggle mb-3 d-flex justify-content-center"
-                            data-toggle="buttons" id="playerTwoSymbolSelection">
+                        <!-- <div id="playerTwoSymbolPick" class="btn-group btn-group-toggle mb-3 d-flex justify-content-center"
+                            data-toggle="buttons" >
                             <label class="btn btn-secondary active">
                                 <input type="radio" name="options" id="option1" autocomplete="off" checked> ⭕️
                             </label>
@@ -70,11 +70,11 @@
                             <label class="btn btn-secondary">
                                 <input type="radio" name="options" id="option3" autocomplete="off"> ⭐️
                             </label>
-                        </div>
+                        </div> -->
                     </div>
 
                     <!-- Modal footer -->
-                    <div class="modal-footer d-flex justify-content-center border-0">
+                    <div id="playButton" class="modal-footer d-flex justify-content-center border-0">
                         <button type="button" class="btn btn-success" data-dismiss="modal">PLAY</button>
                     </div>
 
