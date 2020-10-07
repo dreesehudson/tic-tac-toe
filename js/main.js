@@ -65,19 +65,19 @@ function init() {
     //title information
     const headerRow = generateElement("div", "headerRow", "row mt-3", main);
     const headerCol = generateElement("div", "headerCol", "col", headerRow);
-    const headerTitle = generateElement("h1", "headerTitle", "text-center", headerCol);
-    headerTitle.innerHTML = "Tic Tac Toe";
+    const headerTitle = generateElement("h1", "headerTitle", "text-success text-center", headerCol);
+    headerTitle.textContent = "Tic Tac Toe";
 
     //player information
     const infoRow = generateElement("div", "infoRow", "row mt-3", main);
 
     const playerOneCol = generateElement("div", "playerOneCol", "col-6 align-self-center float-left bg-dark text-light", infoRow);
-    const playerOne = generateElement("p", "playerOneText", "my-auto text-center", playerOneCol);
+    const playerOne = generateElement("p", "playerOneText", "my-auto text-center text-success", playerOneCol);
     //default player name if no name entered in modal
     playerOne.innerHTML = "Player 1";
 
     const playerTwoCol = generateElement("div", "playerTwoCol", "col-6 align-self-center float-right", infoRow);
-    const playerTwo = generateElement("p", "playerTwoText", "my-auto text-center", playerTwoCol);
+    const playerTwo = generateElement("p", "playerTwoText", "my-auto text-center text-light", playerTwoCol);
     //default player name if no name entered in modal
     playerTwo.innerHTML = "Player 2";
 
@@ -93,7 +93,7 @@ function init() {
     // newGameButton.addEventListener("click", newGame);
     // newGameButton.innerHTML = "New Game";
 
-    const restartButton = generateElement("button", "restartButton", "col-6 btn btn-primary", buttonRow);
+    const restartButton = generateElement("button", "restartButton", "col-6 btn btn-success", buttonRow);
     restartButton.addEventListener("click", resetGame);
     restartButton.innerHTML = "Restart Game";
 
@@ -139,7 +139,7 @@ function makeGameTiles(array) {
         //naming the tile based on its for loop index.
         newElement.setAttribute("id", i);
         //apply default classes for each tile and its custom borders defined in array parameter
-        newElement.setAttribute("class", `col-4 border-dark text-center ${array[i]}`);
+        newElement.setAttribute("class", `col-4 border-light text-center ${array[i]}`);
         //sizing
         newElement.setAttribute("style", "height:100px; width:100px; font-size:3em");
         //apply event listener
@@ -184,11 +184,11 @@ function click(e) {
         //if current player is player 2 decrement currTurn to player 1
         currTurn--;
         //change style to player col's to reflect who's turn it is
-        document.getElementById("playerOneCol").classList.remove("bg-light", "text-dark");
-        document.getElementById("playerOneCol").classList.add("bg-dark", "text-light");
+        document.getElementById("playerOneText").classList.remove("text-light");
+        document.getElementById("playerOneText").classList.add("text-success");
 
-        document.getElementById("playerTwoCol").classList.remove("bg-dark", "text-light");
-        document.getElementById("playerTwoCol").classList.add("bg-light", "text-dark");
+        document.getElementById("playerTwoText").classList.remove("text-success");
+        document.getElementById("playerTwoText").classList.add("text-light");
     }
     else {
         //markTile with player 1 symbol
@@ -200,11 +200,11 @@ function click(e) {
         //if current player is player 1 increment currTurn to player 2
         currTurn++;
         //change style to player col's to reflect who's turn it is
-        document.getElementById("playerOneCol").classList.remove("bg-dark", "text-light");
-        document.getElementById("playerOneCol").classList.add("bg-light", "text-dark");
+        document.getElementById("playerOneText").classList.remove("text-success");
+        document.getElementById("playerOneText").classList.add("text-light");
 
-        document.getElementById("playerTwoCol").classList.remove("bg-light", "text-dark");
-        document.getElementById("playerTwoCol").classList.add("bg-dark", "text-light");
+        document.getElementById("playerTwoText").classList.remove("text-light");
+        document.getElementById("playerTwoText").classList.add("text-success");
 
     }
 
@@ -217,7 +217,7 @@ function click(e) {
 
     //check for tie
     if (turnsTaken == 9) {
-        document.getElementById("headerTitle").innerHTML = "Tie Game!";
+        document.getElementById("headerTitle").textContent = "Tie Game!";
     }
 
     //if this is turn 6 or greater, check for winner
@@ -246,11 +246,11 @@ function resetGame() {
     }
 
     //reset styles of player row to show player 1 turn
-    document.getElementById("playerOneCol").classList.remove("bg-light", "text-dark");
-    document.getElementById("playerOneCol").classList.add("bg-dark", "text-light");
+    document.getElementById("playerOneText").classList.remove("text-light");
+    document.getElementById("playerOneText").classList.add("text-success");
 
-    document.getElementById("playerTwoCol").classList.remove("bg-dark", "text-light");
-    document.getElementById("playerTwoCol").classList.add("bg-light", "text-dark");
+    document.getElementById("playerTwoText").classList.remove("text-success");
+    document.getElementById("playerTwoText").classList.add("text-light");
 }
 
 // //newGame listener
